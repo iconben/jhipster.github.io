@@ -44,14 +44,22 @@ As a result:
 
 Once the JHipster Registry is running, you can check its configuration in the `Configuration > Cloud Config` menu. Please note that if you can't log in, it might be because the JWT signature key is not correctly set up, which is a sign that your configuration isn't good.
 
+### Using the pre-packaged WAR file
+
+The JHipster Registry is available as an executable WAR file on our [Releases page](https://github.com/jhipster/jhipster-registry/releases).
+
+Download the WAR file, and run it as a usual JHipster application, using the profile you want to use (see the previous section about profiles). For example:
+
+    ./jhipster-registry-3.1.0.war --spring.profiles.active=prod --spring.cloud.config.server.git.uri=https://github.com/jhipster/jhipster-registry-sample-config
+
 ### Building from source
 
-The JHipster Registry can be cloned/forked/downloaded directly from [jhipster/jhipster-registry](https://github.com/jhipster/jhipster-registry), and we recommend you use the same version tag as the one you use for your JHipster generator. As the JHipster Registry is also a JHipster-generated application, you can run it like any other JHipster application:
+The JHipster Registry can be cloned/forked/downloaded directly from [jhipster/jhipster-registry](https://github.com/jhipster/jhipster-registry). As the JHipster Registry is also a JHipster-generated application, you can run it like any other JHipster application:
 
-- run it with `./mvnw` in development, it will use by default the `dev` profile and it will be available at [http://127.0.0.1:8761/](http://127.0.0.1:8761/).
-- use `./mvnw -Pprod package` to package it in production, and generate the usual JHipster executable WAR file. You can then run the WAR file using the `dev` or `prod` Spring profile, for example: `./jhipster-registry-3.0.0.war --spring.profiles.active=prod`
+- run it in development with `./mvnw` (for the Java server) and `yarn start` (for managing the front-end), it will use by default the `dev` profile and it will be available at [http://127.0.0.1:8761/](http://127.0.0.1:8761/).
+- use `./mvnw -Pprod package` to package it in production, and generate the usual JHipster executable WAR file. You can then run the WAR file using the `dev` or `prod` Spring profile, for example: `./jhipster-registry-3.1.0.war --spring.profiles.active=prod`
 
-Please note that to use the `native` profile, you need to have a `central-config` directory with your configuration, so if you run `./jhipster-registry-3.0.0.war --spring.profiles.active=dev`, you need to have that directory set up.
+Please note that to use the `native` profile, you need to have a `central-config` directory with your configuration, so if you run `./jhipster-registry-3.1.0.war --spring.profiles.active=dev`, you need to have that directory set up.
 
 ### Using Docker
 
@@ -65,7 +73,7 @@ Please read our [Docker Compose documentation]({{ site.url }}/docker-compose/) f
 
 It's very easy to host a JHipster Registry instance in the cloud. This is mandatory in production, but this can also be useful in development (there is no need to run it on your laptop).
 
-Please read [the "microservices in production" documentation]({{ site.url }}/microservices-in-production/) to learn how to deploy the JHipster Registry to Cloud Foundry or to Heroku. 
+Please read [the "microservices in production" documentation]({{ site.url }}/microservices-in-production/) to learn how to deploy the JHipster Registry to Cloud Foundry or to Heroku.
 
 ## <a name="eureka"></a> Service discovery with Eureka
 
@@ -95,6 +103,23 @@ To manage your centralized configuration you just need to add `appname-profile.y
 For example, adding properties in a `gateway-prod.yml` file will set those properties only for the application named **gateway** started with a **prod** profile. Moreover, properties defined in `application[-dev|prod].yml` will be set for all your applications.
 
 As the Gateway routes are configured using Spring Boot, they can also be managed using the Spring Config Server, for example you could map application `app1-v1` to the `/app1` URL in your `v1` branch, and map application `app1-v2` to the `/app1` URL in your `v2` branch. This is a good way of upgrading microservices without any downtime for end-users.
+
+### <a name="encryption"></a> Using encrypted configuration values
+
+The JHipster Registry has a specific `configuration > encryption` page to allow easy encryption and decryption of configuration values.
+
+To encrypt configuration values (for example, database passwords) you need to:
+
+- download the [JCE](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) and install it by following the instructions in the downloaded files.
+- set the `encrypt.key` in `bootstrap.yml` (not `application.yml`) or use the environment variable `ENCRYPT_KEY` with your symmetric key passphrase.
+
+If everything is setup correctly, you should be able to use the specific `configuration > encryption` page, and also send POST requests to `/config/encrypt` and `/config/decrypt` endpoints with the text you want to manipulate in the `body` of the requests.
+
+For example: `curl localhost:8761/config/encrypt -d mypassword`
+
+The cipher text must be placed in any `*.yml` configuration file, in the form `password= '{cipher}myciphertextafterencryotion'` and it will be decrypted by the config server before sending it to its clients. This way your configuration files (stored in Git or stored "natively" on your filesystem) do not have plain text values.
+
+For more information, please refer to Spring Cloud Config's [Encryption and Decryption documentation](http://cloud.spring.io/spring-cloud-config/spring-cloud-config.html#_encryption_and_decryption).
 
 ## <a name="dashboards"></a> Administration dashboards
 

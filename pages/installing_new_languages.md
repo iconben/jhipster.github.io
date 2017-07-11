@@ -52,6 +52,7 @@ These are the currently supported languages
 *   Tamil
 *   Thai
 *   Turkish
+*   Ukrainian
 *   Vietnamese
 
 _Your language is missing in JHipster? Help us improve the project with a PR!_
@@ -60,7 +61,7 @@ _Your language is missing in JHipster? Help us improve the project with a PR!_
 
 To do this you can run the languages sub-generator with:
 
-`yo jhipster:languages`
+`jhipster languages`
 
 ![]({{ site.url }}/images/install_new_languages.png)
 
