@@ -6,22 +6,35 @@ redirect_from:
   - /using_kafka.html
 sitemap:
     priority: 0.7
-    lastmod: 2016-09-22T00:00:00-00:00
+    lastmod: 2019-10-30T00:00:00-00:00
 ---
 
 # <i class="fa fa-envelope"></i> Using Kafka
-
-__WARNING!__ This is a new feature, of <b>BETA</b> quality. Use it at your own risk! Feedback is highly welcome!
 
 ## Features
 
 [Kafka](http://kafka.apache.org/) is a popular publish-subscribe messaging system. JHipster has an optional support for Kafka, that will:
 
-- Configure [Spring Cloud Stream](https://cloud.spring.io/spring-cloud-stream/) with JHipster.
-- Add the necessary configuration in the `application-*.yml` files to have a sample `topic-jhipster` topic, and to have an healthcheck monitor for Kafka (which will be available in the `health` administration screen).
-- Generate a Docker Compose configuration file, with the sample `topic-jhipster` topic, so Kafka is usable by simply typing `docker-compose -f src/main/docker/kafka.yml up -d`.
-- Provide support for Kafka in a microservice environment, when using Docker. The Docker Compose sub-generator will generate a specific Kafka configuration, if one microservice or one gateway uses Kafka. All microservices and gateways will then use that Kafka broker for all their messages. The broker is common for all applications, as it is typically used as a message broker between applications.
+- Configure [Kafka clients](https://docs.confluent.io/5.3.1/clients/consumer.html#java-client) with JHipster.
+- Add the necessary configuration in the `application-*.yml`
+- Generate a Docker Compose configuration file, so Kafka is usable by typing `docker-compose -f src/main/docker/kafka.yml up -d`.
 
-## Limitation
+## Prerequisite
 
-- We currently do not provide a complete example on working with Kafka, and we have no client-side code using Kafka.
+Generate a new application and make sure to select `Asynchronous messages using Apache Kafka` when prompted for technologies you would like to use. A Docker Compose configuration file is generated and you can start Kafka with the command:
+
+`docker-compose -f src/main/docker/kafka.yml up -d`
+
+## Consumer and Producer
+
+A consumer (`<appName>KafkaConsumer` class) is running and can be adapted to your needs.
+
+A producer (`<appName>KafkaProducer` class) is also available and can be called through a REST endpoint (`<appName>KafkaResource class`).
+
+## Running the app
+
+Allow access to the endpoint in `SecurityConfiguration.java`:
+
+`.antMatchers("/api/<appName>-kafka/publish").permitAll()`
+
+If you invoke the endpoint `http://localhost:8080/api/<appName>-kafka/publish?message=...`, you should see the message logged to the console.

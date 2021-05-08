@@ -18,7 +18,7 @@ What's new
 
 This new release comes with many small bug fixes, and one big new feature: we now have official [Heroku](https://www.heroku.com/home) support, provided by [Joe Kutner](https://twitter.com/codefinger) from Heroku.
 
-Joe also did an [Heroku official sample application](https://github.com/kissaten/jhipster-example) and updated [our documentation](http://jhipster.github.io/heroku/) accordingly!
+Joe also did an [Heroku official sample application](https://github.com/kissaten/jhipster-example) and updated [our documentation]({{ site.url }}/heroku/) accordingly!
 
 We just keep the **beta** tag on this sub-generator for this release, the time for us to have some external feedback, and then we will remove it.
 
@@ -50,6 +50,6 @@ Help and bugs
 
 If you find any issue with this release, don't hesitate to:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
+- Contact [@jhipster](https://twitter.com/jhipster) on Twitter
 - Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
 - Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)

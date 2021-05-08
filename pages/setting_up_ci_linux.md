@@ -11,7 +11,7 @@ sitemap:
 
 # <i class="fa fa-stethoscope"></i> Setting up Jenkins 1 on Linux
 
-The instructions below are for a Red Hat/CentOS server but can be easily adapted for other Linux distributions.
+The instructions below are for a Red Hat/CentOS server but can be adapted for other Linux distributions.
 
 ## Installing Jenkins
 
@@ -49,7 +49,7 @@ Install Jenkins NodeJS plugin.
 
 Through Jenkins administration, add a NodeJS installation:
 
-- Automatic installer from nodejs.org, use the latest LTS (Long Term Support) version
+- Automatic installer from nodejs.org, use the latest LTS (Long Term Support) 64-bit version
 - Global npm packages to install: bower gulp
 
 #### Local NodeJS installation

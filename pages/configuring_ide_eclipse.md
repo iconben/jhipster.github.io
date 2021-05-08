@@ -38,7 +38,7 @@ __Note__: if you already have an existing JHipster project and have not installe
 
 `Plugin execution not covered by lifecycle configuration: org.bsc.maven:maven-processor-plugin:2.2.4:process (execution: process, phase: generate-sources)`
 
-Just select Quick Fix/Ctrl+1 (Cmd+1 on Mac) on the error marker and select "Discover new m2e connectors"
+Select Quick Fix/Ctrl+1 (Cmd+1 on Mac) on the error marker and select "Discover new m2e connectors"
 
 ## 2. Excluding generated static folders
 At this stage you should not have any Java error but should still see some JavaScript errors. This is because you have some JavaScript files that Eclipse cannot parse properly. Those files are used at execution time only and do not need to be visible in your workspace. They should be excluded.
@@ -79,3 +79,11 @@ If you are using Maven, you need to activate the `IDE` profile in Eclipse. This 
 - In "Active Maven Profiles", type `dev,IDE`
 
 With this configuration, you will be using both the JHipster `dev` and `IDE` profiles.
+
+### Configuring MapStruct plugins
+
+In case for the IDE correctly recognize the mapstruct code generator some more things needs to be done.
+
+You should use the plugin m2e-apt (https://marketplace.eclipse.org/content/m2e-apt). Installing the m2e-apt plugin, enable Eclipse to work along with mapstruct.
+
+Also you can install the plugin MapStruct Eclipse Plugin (https://marketplace.eclipse.org/content/mapstruct-eclipse-plugin) for help and tips from the IDE. 

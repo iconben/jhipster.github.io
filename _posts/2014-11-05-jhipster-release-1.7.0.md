@@ -11,7 +11,7 @@ JHipster release 1.7.0
 What's new
 ----------
 
-The main new improvement of this release is the [Cloud Foundry sub-generator](http://jhipster.github.io/cloudfoundry/). It is working so well that we didn't put the BETA tag on it (unlike our Heroku and OpenShift sub-generators). If you [Check the code](https://github.com/jhipster/generator-jhipster/tree/master/cloudfoundry) you can also see how small and clean it is.
+The main new improvement of this release is the [Cloud Foundry sub-generator]({{ site.url }}/cloudfoundry/). It is working so well that we didn't put the BETA tag on it (unlike our Heroku and OpenShift sub-generators). If you [Check the code](https://github.com/jhipster/generator-jhipster/tree/master/cloudfoundry) you can also see how small and clean it is.
 
 You can now easily deploy your application to any Cloud Foundry instance available, with MySQL, Postgresql or MongoDB!
 
@@ -37,6 +37,6 @@ Help and bugs
 
 If you find any issue with this release, don't hesitate to:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
+- Contact [@jhipster](https://twitter.com/jhipster) on Twitter
 - Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
 - Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)

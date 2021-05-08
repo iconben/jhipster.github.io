@@ -16,7 +16,7 @@ A JHipster module is a Yeoman generator that is [composed](http://yeoman.io/auth
 
 JHipster modules are listed on the [JHipster marketplace]({{ site.url }}/modules/marketplace/).
 
-This allows to create third-party generators that have access to the JHipster variables and functions, and act like standard JHipster sub-generators.
+This allows developers to create third-party generators that have access to the JHipster variables and functions, and act like standard JHipster sub-generators.
 The hook mechanism invokes third-party generators before and after app generation and entity generation.
 
 ## Example
@@ -32,7 +32,7 @@ Or, you can use the [JHipster module generator](https://github.com/jhipster/gene
 A JHipster module:
 
 - is an NPM package, and is a Yeoman generator.
-- follows an extension of the Yeoman rules listed at [http://yeoman.io/generators/](http://yeoman.io/generators/) and can be installed, used and updated using the "yo" command. Instead of being prefixed by "generator-", it is prefixed by "generator-jhipster-", and instead of having just the "yeoman-generator" keyword, it must have 2 keywords, "yeoman-generator" and "jhipster-module".
+- follows an extension of the Yeoman rules listed at [http://yeoman.io/generators/](http://yeoman.io/generators/) and can be installed, used and updated using the "yo" command. Instead of being prefixed by "generator-", it is prefixed by "generator-jhipster-", and instead of having just the "yeoman-generator" keyword, it must have two keywords, "yeoman-generator" and "jhipster-module".
 - A JHipster module registering as a hook should not call `process.exit` in its generators being hooked.
 
 ## Import the generator-jhipster
@@ -62,7 +62,7 @@ JHipster will call certain hooks before and after some of its tasks, currently a
 
 - Post Entity creation hook
 - Pre Entity creation hook [planned]
-- Post App creation hook [planned]
+- Post App creation hook
 - Pre App creation hook [planned]
 
 [JHipster module generator](https://github.com/jhipster/generator-jhipster-module) now has option to generate this.
@@ -87,7 +87,7 @@ You have to use this function:
 You can access to configuration in `.yo-rc.json`:
 
 ```
-    this.jhipsterAppConfig = this.getJhipsterAppConfig();
+    this.jhipsterAppConfig = this.getAllJhipsterConfig();
     this.baseName = this.jhipsterAppConfig.baseName;
     this.packageName = this.jhipsterAppConfig.packageName;
     this.clientFramework = this.jhipsterAppConfig.clientFramework;

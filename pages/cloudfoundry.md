@@ -24,7 +24,7 @@ As this sub-generator uses the Cloud Foundry command-line tool, it can deploy to
 *   [Pivotal Web Services](http://run.pivotal.io/), which officially sponsors JHipster, so it is the only one we can test and provide support on
 *   [Atos Canopy](https://canopy-cloud.com/)
 *   [IBM Bluemix](https://console.ng.bluemix.net/)
-*   And of course your own private Cloud Foundry instance if you have decided to install Cloud Foundry yourself!
+*   And your own private Cloud Foundry instance if you have decided to install Cloud Foundry yourself!
 
 ## Running the sub-generator
 
@@ -43,12 +43,16 @@ This should package your application (in production or development mode), create
 When your application is already deployed, you can re-deploy it by building it normally by running:
 
 **With Maven:**
+
 `./mvnw -Pprod package`
-`cf push -f ./deploy/cloudfoundry/manifest.yml -p target/*.war`
+
+`cf push -f ./deploy/cloudfoundry/manifest.yml -p target/*.jar`
 
 **With Gradle:**
-`./gradlew -Pprod bootRepackage`
-`cf push -f ./deploy/cloudfoundry/manifest.yml -p build/libs/*.war`
+
+`./gradlew -Pprod bootJar`
+
+`cf push -f ./deploy/cloudfoundry/manifest.yml -p build/libs/*.jar`
 
 You can also run the sub-generator again, by typing another time:
 

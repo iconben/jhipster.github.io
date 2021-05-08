@@ -25,7 +25,7 @@ You can install it by using the Visual Studio Code marketplace:
 
 ## Java Code Support
 
-Visual Studio Code has a Java extension developped by Red Hat. It has a good Java support, using Maven (so it won't work if you select the Gradle option with JHipster).
+Visual Studio Code has a Java extension developed by Red Hat. It has a good Java support, using Maven or Gradle.
 
 You can install it by using the Visual Studio Code marketplace:
 
@@ -62,6 +62,7 @@ For best performance, it's recommended to exclude some folders, in your project'
     // Configure glob patterns for excluding files and folders.
     "files.exclude": {
         "**/.git": true,
+        "**/.gradle": true,
         "**/.idea": true,
         "**/.mvn": true,
         "**/.svn": true,
@@ -73,6 +74,7 @@ For best performance, it's recommended to exclude some folders, in your project'
         "**/node": true,
         "**/node_modules": true,
         "**/bower_components": true,
+        "**/build": true,
         "**/target": true
     }
 }

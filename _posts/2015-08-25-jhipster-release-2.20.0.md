@@ -16,7 +16,7 @@ Looking for the (old) JHipster v2.x documentation? It's [Here]({{ post.url }}/do
 What's new
 ----------
 
-Like last month, this new release was largely done by [the new dev team](http://jhipster.github.io/team/), so kudos to all of you guys!
+Like last month, this new release was largely done by [the new dev team]({{ site.url }}/team/), so kudos to all of you guys!
 
 The new and noteworthy features are:
 
@@ -54,6 +54,6 @@ Help and bugs
 
 If you find any issue with this release, don't hesitate to:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
+- Contact [@jhipster](https://twitter.com/jhipster) on Twitter
 - Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
 - Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)

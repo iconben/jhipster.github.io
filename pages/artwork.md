@@ -11,42 +11,36 @@ sitemap:
 
 # <i class="fa fa-pencil"></i> Artwork
 
-## Stickers
+All our artwork can be found in our [artwork repository](https://github.com/jhipster/jhipster-artwork).
 
-Stickers are sold at [unixstickers.com]( http://www.unixstickers.com/stickers/coding_stickers/java-hispter-jhipster-shaped-sticker). Please note that we are not affiliated with unixstickers.com, and that we have absolutely no business relation with them, but their stickers definitely look cool! If you have bought one, we would appreciate your feedback (and a photo!).
+## The JHipster Logo
+<img src="/jhipster-artwork/logos/JHipster%20bowtie%20-%20square.png"
+      alt="JHipster Logo"
+      width="200">
 
-![]({{ site.url }}/images/sticker_on_laptop_thumbnail.jpg)
+## The JHipster Banner
 
-[[Larger version]({{ site.url }}/images/sticker_on_laptop.jpg)]
+<img src="/jhipster-artwork/logos/JHipster%20banner.png"
+      alt="JHipster Banner"
+      width="500">
 
-## Logo downloads
+## The JHipster Family
 
-![]({{ site.url }}/images/logo/logo-jhipster.png)
+Below are some examples of the JHipster family members.
 
-JHipster logo [[SVG]({{ site.url }}/images/logo/logo-jhipster.svg)] [[PNG (small)]({{ site.url }}/images/logo/logo-jhipster.png)] [[PNG (big)]({{ site.url }}/images/logo/logo-jhipster2x.png)]
+<div width="500" align="center">
+  <img src="/jhipster-artwork/family/jhipster_family_member_0.svg" width="200">
+  <img src="/jhipster-artwork/family/jhipster_family_member_1.svg" width="200">
+  <img src="/jhipster-artwork/family/jhipster_family_member_2.svg" width="200">
+  <img src="/jhipster-artwork/family/jhipster_family_member_3.svg" width="200">
+</div>
 
-* * *
+## Inclusiveness
 
-![]({{ site.url }}/images/logo/logo-jhipster-drink-coffee-thumbnail.png)
+As with all JHipster projects, the JHipster Artwork project follows the [JHipster code of conduct](https://github.com/jhipster/generator-jhipster/blob/master/CODE_OF_CONDUCT.md). One of our goals is to have inclusive artwork: at the moment the "JHipster family" has a few members, but the idea is that this family grows, with many different members, as expressed in our code of conduct. If you want to help the project, you can either participate as an artist (the source files from all images are available in the [github repository](https://github.com/jhipster/jhipster-artwork)) or as a sponsor (so we can pay an artist to create those new images).
 
-JHipster drinking coffee [[SVG]({{ site.url }}/images/logo/logo-jhipster-drink-coffee.svg)] [[PNG]({{ site.url }}/images/logo/logo-jhipster-drink-coffee.png)]
+All images are validated by [Audrey Neveu](https://twitter.com/Audrey_Neveu), who is well-known in the Java community for her involvement in [Devoxx4Kids](http://www.devoxx4kids.org/) and [Duchess France](https://www.duchess-france.org/).
 
-* * *
+## Logos and images usage
 
-## Desktop background
-
-![]({{ site.url }}/images/artwork/wallpaper-001-thumbnail.png)
-
-JHipster desktop background [[1440 x 900]({{ site.url }}/images/artwork/wallpaper-001-1440x900.png)] [[1920 x 1200]({{ site.url }}/images/artwork/wallpaper-001-1920x1200.png)] [[2560 x 1440]({{ site.url }}/images/artwork/wallpaper-001-2560x1440.png)]
-
-![]({{ site.url }}/images/artwork/wallpaper-002-thumbnail.png)
-
-JHipster desktop background [[1440 x 900]({{ site.url }}/images/artwork/wallpaper-002-1440x900.png)] [[1920 x 1200]({{ site.url }}/images/artwork/wallpaper-002-1920x1200.png)] [[2560 x 1440]({{ site.url }}/images/artwork/wallpaper-002-2560x1440.png)]
-
-![]({{ site.url }}/images/artwork/wallpaper-003-thumbnail.png)
-
-JHipster desktop background [[1440 x 900]({{ site.url }}/images/artwork/wallpaper-003-1440x900.png)] [[1920 x 1200]({{ site.url }}/images/artwork/wallpaper-003-1920x1200.png)] [[2560 x 1440]({{ site.url }}/images/artwork/wallpaper-003-2560x1440.png)]
-
-![]({{ site.url }}/images/artwork/wallpaper-004-thumbnail.png)
-
-JHipster desktop background [[1440 x 900]({{ site.url }}/images/artwork/wallpaper-004-1440x900.png)] [[1920 x 1200]({{ site.url }}/images/artwork/wallpaper-004-1920x1200.png)] [[2560 x 1440]({{ site.url }}/images/artwork/wallpaper-004-2560x1440.png)]
+All logos and images are available under the [Apache 2 license](LICENSE.txt), and belong to the JHipster project.

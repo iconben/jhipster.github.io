@@ -19,11 +19,11 @@ This generator has one limitation:
 
 When Cassandra is selected:
 
-*   The Cassandra CQL driver is used to access the database. We don't use Spring Data Cassandra, as we prefer to use the driver directly. As a result, the repositories contain quite a lot of code
+*   Spring Data Reactive for Apache Cassandra is used
 *   The [entity sub-generator]({{ site.url }}/creating-an-entity/) will not ask you for entity relationships, as you can't have relationships with a NoSQL database (at least not in the way you have relationships with JPA)
 *   The generated entities only support one partition key, which is the ID. Future versions will provide composite primary keys and clustering keys
 
-## **_[BETA]_** Migration tool
+## Migration tool
 
 Similar to [Liquibase](http://www.liquibase.org/), JHipster provide a tool to apply your CQL migration scripts, with some restrictions:
 
@@ -70,7 +70,7 @@ To run the tool use this command: `src/main/docker/cassandra/scripts/autoMigrate
 By default, the `src/main/resources/config/create-keyspace.cql` script is used to create the keyspace if necessary.
 You can override it with a second argument: `src/main/docker/cassandra/scripts/autoMigrate.sh src/main/resources/config/cql/changelog/ create-keyspace-prod.cql`
 
-If you only want to execute a specific script against your cluster use: `src/main/docker/cassandra/scripts/execute-cql.sh src/main/resources/config/cql/changelog/<your script>.cql`
+If you only want to run a specific script against your cluster use: `src/main/docker/cassandra/scripts/execute-cql.sh src/main/resources/config/cql/changelog/<your script>.cql`
 
 ## Cassandra and Docker on non-linux OSs
 

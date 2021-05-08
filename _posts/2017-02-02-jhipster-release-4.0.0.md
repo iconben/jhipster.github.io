@@ -8,7 +8,7 @@ JHipster release 4.0.0
 
 This new major release is a huge step forward, after nearly one year of very hard work.
 
-This would never have been possible without our wonderful [core dev team](https://jhipster.github.io/team/) and our incredible number of [contributors](https://github.com/jhipster/generator-jhipster/graphs/contributors)! Thank you so much, everyone!
+This would never have been possible without our wonderful [core dev team]({{ site.url }}/team/) and our incredible number of [contributors](https://github.com/jhipster/generator-jhipster/graphs/contributors)! Thank you so much, everyone!
 
 Summary
 ------------
@@ -16,7 +16,7 @@ Summary
 JHipster now support both AngularJS 1 and Angular 2.x, making it:
 
 - The only available "full stack" generator for Angular 2.x
-- The only generator that creates non-trivial Angular 2.x code, in particular using our [JDL Studio](http://jhipster.github.io/jdl-studio/)
+- The only generator that creates non-trivial Angular 2.x code, in particular using our [JDL Studio](https://start.jhipster.tech/jdl-studio/)
 
 We have also removed a lot of our previous pain points, so that generation is easier, faster, and safer.
 
@@ -75,7 +75,7 @@ This means that a JHipster-generated project is of much higher quality than most
 What's next?
 ------------
 
-As this is a 4.0.0 release, with a lot of changes, we expect to release regularly patch versions. Be sure to follow [@java_hipster](https://twitter.com/java_hipster) to be notified of those new versions!
+As this is a 4.0.0 release, with a lot of changes, we expect to release regularly patch versions. Be sure to follow [@jhipster](https://twitter.com/jhipster) to be notified of those new versions!
 
 Our documentation is not totally updated, as it is very big. If you see any issue, don't hesitate to create a ticket, and maybe even send a pull request, on our [documentation repository](https://github.com/jhipster/jhipster.github.io).
 
@@ -131,4 +131,4 @@ If you find any issue with this release, don't hesitate to:
 
 If the issue you have is an urgent bug or security issue, please:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
+- Contact [@jhipster](https://twitter.com/jhipster) on Twitter

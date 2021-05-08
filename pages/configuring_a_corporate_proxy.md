@@ -28,16 +28,7 @@ Supposing your proxy is defined with:
 
 The resulting configuration is: `http://username:password@host:port`
 
-If your use [Cntlm](http://cntlm.sourceforge.net/), then your configuration would be: `127.0.0.1:3128`. Otherwise, follow the next steps to configure each tool individually.
-
-## Yarn configuration
-
-Use these commands:
-
-```
-yarn config set proxy http://username:password@host:port
-yarn config set https-proxy http://username:password@host:port
-```
+If you use [Cntlm](http://cntlm.sourceforge.net/), then your configuration would be: `127.0.0.1:3128`. Otherwise, follow the next steps to configure each tool individually.
 
 ## NPM configuration
 
@@ -54,6 +45,15 @@ Or you can edit directly your `~/.npmrc` file:
 proxy=http://username:password@host:port
 https-proxy=http://username:password@host:port
 https_proxy=http://username:password@host:port
+```
+
+## Yarn configuration
+
+Use these commands:
+
+```
+yarn config set proxy http://username:password@host:port
+yarn config set https-proxy http://username:password@host:port
 ```
 
 ## Git configuration
@@ -74,20 +74,9 @@ Or you can edit directly your `~/.gitconfig` file:
         proxy = http://username:password@host:port
 ```
 
-## Bower configuration
-
-Edit your `~/.bowerrc` file:
-
-```
-{
-    "proxy":"http://username:password@host:port",
-    "https-proxy":"http://username:password@host:port"
-}
-```
-
 ## Maven configuration
 
-Edit the `proxies` session in your `~/.m2/settings.xml` file
+Edit the `proxies` session in your `~/.m2/settings.xml` file:
 
 ```
 <proxies>

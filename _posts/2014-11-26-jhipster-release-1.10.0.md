@@ -16,7 +16,7 @@ This should be our last 1.x release, and we are now going to merge our "v2.0" br
 The highlights of this release are:
 
 - We upgraded to the latest Spring Boot 1.2.0.RC2
-- We have a new "fast" profile, which is documented [here](http://jhipster.github.io/profiles/). You can expect to start up a JHipster application in 4 seconds!
+- We have a new "fast" profile, which is documented [here]({{ site.url }}/profiles/). You can expect to start up a JHipster application in 4 seconds!
 - We have corrected lots of small issues, and upgraded most libraries (like Hazelcast or Atmosphere)
 
 
@@ -42,6 +42,6 @@ Help and bugs
 
 If you find any issue with this release, don't hesitate to:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
+- Contact [@jhipster](https://twitter.com/jhipster) on Twitter
 - Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
 - Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)

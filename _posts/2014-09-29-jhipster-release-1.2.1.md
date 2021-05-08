@@ -14,7 +14,7 @@ What's new
 This is a maintenance release, with:
 
 - An upgrade to the latest Spring Boot 1.1.7
-- A much better [Docker documentation](http://jhipster.github.io/installation/)
+- A much better [Docker documentation]({{ site.url }}/installation/)
 - An improved OpenShift sub-generator (this is still in BETA an very hard to test, so all your feedback is really welcome)
 
 [You can check the closed tickets here](https://github.com/jhipster/generator-jhipster/issues?q=milestone%3A1.2.1+is%3Aclosed).
@@ -39,6 +39,6 @@ Help and bugs
 
 If you find any issue with this release, don't hesitate to:
 
-- Contact [@java_hipster](https://twitter.com/java_hipster) on Twitter
+- Contact [@jhipster](https://twitter.com/jhipster) on Twitter
 - Add a bug on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open)
 - Post a question on [Stack Overflow](http://stackoverflow.com/tags/jhipster/info)

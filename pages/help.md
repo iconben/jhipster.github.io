@@ -31,7 +31,7 @@ Go to Stack Overflow with the ["jhipster"](http://stackoverflow.com/tags/jhipste
 
 First read our [contributing guidelines](https://github.com/jhipster/generator-jhipster/blob/master/CONTRIBUTING.md).
 
-Then, fill a ticket on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues?state=open), we'll be happy to resolve your issue!
+Then, fill a ticket on our [bug tracker](https://github.com/jhipster/generator-jhipster/issues/new/choose), we'll be happy to resolve your issue!
 
 ## If you want to chat with contributors and other users
 
@@ -39,7 +39,7 @@ Join our chat room on [Gitter.im](https://gitter.im/jhipster/generator-jhipster)
 
 ## If there is some urgent news you need to share
 
-Mention [@java_hipster](https://twitter.com/java_hipster) on Twitter.
+Mention [@jhipster](https://twitter.com/jhipster) on Twitter.
 
 ## If you want to see what the core team is doing
 

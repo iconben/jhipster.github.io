@@ -6,69 +6,71 @@ redirect_from:
   - /installation.html
 sitemap:
     priority: 0.7
-    lastmod: 2016-12-21T00:00:00-00:00
+    lastmod: 2018-08-30T08:20:00-00:00
 ---
 
 # <i class="fa fa-cloud-download"></i> Installing JHipster
 
 ## Installation types
 
-We provide 4 ways of working with JHipster:
+We provide 4 ways of working with JHipster. If in doubt, choose our 2nd option, "Local installation with NPM":
 
-*   A "local installation with Yarn", which is the classical way of working with JHipster. Everything is installed on your machine, which can be a little complex to set up, but that's how most people usually work. In case of doubt, choose this installation.
-*   A "local installation with NPM", which is the same as classical "local installation with Yarn", but using NPM instead of [Yarn](https://yarnpkg.com/)
-*   A Vagrant-based "[development box](https://github.com/jhipster/jhipster-devbox)", with all tools already set up in a Ubuntu-based virtual machine.
-*   A "[Docker](https://www.docker.io/)" container, which brings you a lightweight, virtualized container with JHipster installed.
+*   [JHipster Online](https://start.jhipster.tech/) is a way to generate an application without installing JHipster in the first place.
+*   "Local installation with NPM" is the classical way of working with JHipster. Everything is installed on your machine, which can be a little complex to set up, but that's how most people usually work. In case of doubt, choose this installation.
+*   "Local installation with Yarn" is the same as classical "Local installation with NPM", but using [Yarn](https://yarnpkg.com/) instead of NPM. Please note that Yarn is a lot less popular than NPM in our community, so this isn't a recommended option for newcomers.
+*   The "[Docker](https://www.docker.io/)" container, which brings you a lightweight container with JHipster installed.
 
-## Local installation with Yarn (recommended for normal users)
+## JHipster Online (for users wanting a simplified way to run JHipster)
 
-1.  Install Java 8 from [the Oracle website](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
-2.  (Optional) Install a Java build tool.
-    *   Whether you choose to use [Maven](http://maven.apache.org/) or [Gradle](http://www.gradle.org/), you normally don't have to install anything, as JHipster will automatically install the [Maven Wrapper](https://github.com/takari/maven-wrapper) or the [Gradle Wrapper](http://gradle.org/docs/current/userguide/gradle_wrapper.html) for you.
-    *   If you don't want to use those wrappers, go to the official [Maven website](http://maven.apache.org/) or [Gradle website](http://www.gradle.org/) to do your own installation.
-3.  Install Git from [git-scm.com](http://git-scm.com/). We recommend you also use a tool like [SourceTree](http://www.sourcetreeapp.com/) if you are starting with Git.
-4.  Install Node.js from [the Node.js website](http://nodejs.org/) (prefer an LTS version)
-5.  Install Yarn from [the Yarn website](https://yarnpkg.com/en/docs/install)
-6.  Install Yeoman: `yarn global add yo`
-7.  Only for AngularJS 1, install Bower: `yarn global add bower`
-8.  Only for AngularJS 1, install Gulp: `yarn global add gulp-cli`
-9.  Install JHipster: `yarn global add generator-jhipster`
+[JHipster Online](https://start.jhipster.tech/) allows you to generate JHipster applications, without having to install JHipster.
 
-Note: if you have problems to use these tools globally, be sure you have `$HOME/.config/yarn/global/node_modules/.bin` in your path.
+This is intended for people trying JHipster for the first time, or who want to have a look at what JHipster provides.
 
-On Mac or Linux: ```export PATH="$PATH:`yarn global bin`:$HOME/.config/yarn/global/node_modules/.bin"```
+While it is easier to use, it is not the "full JHipster experience", and once your application is generated you will still need to follow most of the steps from the next section ("Local installation with NPM"), as you will still need Java (to run your application) and NPM (to manage your front-end code).
 
-JHipster uses [Yeoman](http://yeoman.io/) for code generation.
-To find more information, tips and help, please have a look at [the Yeoman "getting starting" guide](http://yeoman.io/learning/index.html) and at the [Yarn documentation](https://yarnpkg.com/) before [submitting a bug](https://github.com/jhipster/generator-jhipster/issues?state=open).
+In the future, we expect JHipster Online to provide more features.
+
+## Local installation with NPM (recommended for normal users)
+
+### Quick setup
+
+1.  Install Java 11. We recommend you use [AdoptOpenJDK builds](https://adoptopenjdk.net/), as they are open source and free.
+2.  Install Node.js from [the Node.js website](http://nodejs.org/) (please use an LTS 64-bit version, non-LTS versions are not supported)
+3.  Install JHipster: `npm install -g generator-jhipster`
+4.  (optional) If you want to use a module or a blueprint (for instance from the [JHipster Marketplace]({{ site.url }}/modules/marketplace/#/list)), install [Yeoman](https://yeoman.io/): `npm install -g yo`
 
 Now that JHipster is installed, your next step is to [create an application]({{ site.url }}/creating-an-app/)
 
-## Local installation with NPM (alternative to Yarn)
+### Optional installations
 
-1.  Install Java 8 from [the Oracle website](http://www.oracle.com/technetwork/java/javase/downloads/index.html).
-2.  (Optional) Install a Java build tool.
+1. Install a Java build tool.
     *   Whether you choose to use [Maven](http://maven.apache.org/) or [Gradle](http://www.gradle.org/), you normally don't have to install anything, as JHipster will automatically install the [Maven Wrapper](https://github.com/takari/maven-wrapper) or the [Gradle Wrapper](http://gradle.org/docs/current/userguide/gradle_wrapper.html) for you.
     *   If you don't want to use those wrappers, go to the official [Maven website](http://maven.apache.org/) or [Gradle website](http://www.gradle.org/) to do your own installation.
-3.  Install Git from [git-scm.com](http://git-scm.com/). We recommend you also use a tool like [SourceTree](http://www.sourcetreeapp.com/) if you are starting with Git.
-4.  Install Node.js from [the Node.js website](http://nodejs.org/) (prefer an LTS version). This will also install `npm`, which is the node package manager we are using in the next commands.
-5.  (Recommended) Update NPM: `npm install -g npm`
-6.  Install Yeoman: `npm install -g yo`
-7.  Only for AngularJS 1, install Bower: `npm install -g bower`
-8.  Only for AngularJS 1, install Gulp: `npm install -g gulp-cli` (If you have previously installed a version of gulp globally, please run `npm rm -g gulp` to make sure your old version doesn't collide with `gulp-cli`)
-9.  Install JHipster: `npm install -g generator-jhipster`
-10.  (Optional) Install Yarn: `npm install -g yarn` (If so, after generating a project, `yarn install` will be launched instead of `npm install`)
+2.  Install Git from [git-scm.com](http://git-scm.com/). We recommend you also use a tool like [SourceTree](http://www.sourcetreeapp.com/) if you are starting with Git.
+    * JHipster will try to commit your project to Git, if it is installed.
+    * The [JHipster upgrade sub-generator]({{ site.url }}/upgrading-an-application/) requires to have Git installed.
 
-You can find here the [NPM documentation](https://docs.npmjs.com/).
+### Additional information
 
-## Vagrant box installation
+JHipster uses [Yeoman](http://yeoman.io/) for code generation.
+To find more information, tips and help, please have a look at [the Yeoman "getting starting" guide](http://yeoman.io/learning/index.html) before [submitting a bug](https://github.com/jhipster/generator-jhipster/issues?state=open).
 
-The [JHipster development box](https://github.com/jhipster/jhipster-devbox) project gives you a virtual machine with all the necessary tools to develop your JHipster project.
+The configuration will be stored in a generated `.yo-rc.json` file, so it is **strongly** recommended not to generate a JHipster project in your HOME directory. If you did it, you won't be able to generate another project in a sub directory. To solve it, delete the `.yo-rc.json` file.
 
-It's an easy way to get up and running very quickly with JHipster.
+## Local installation with Yarn (alternative to NPM)
 
-Besides JHipster, this virtual machine includes many development tools, as well as Docker, so you should have everything ready for working.
+### Quick setup
 
-Please go to the [JHipster development box page](https://github.com/jhipster/jhipster-devbox) for installation and configuration information.
+This is the same procedure as using NPM, with two differences:
+
+1. Install Yarn from [the Yarn website](https://yarnpkg.com/en/docs/install)
+2. Install JHipster: `yarn global add generator-jhipster`
+
+### Troubleshooting
+
+If you have problems using Yarn globally, be sure to have `$HOME/.config/yarn/global/node_modules/.bin` in your path.
+
+On Mac or Linux: ```export PATH="$PATH:`yarn global bin`:$HOME/.config/yarn/global/node_modules/.bin"```
 
 ## Docker installation (for advanced users only)
 
@@ -86,21 +88,21 @@ This image will allow you to run JHipster inside Docker.
 
 This depends on your operating system.
 
-1.  **Linux:** Linux supports Docker out-of-box. You just need to follow the tutorial on the [Docker](https://docs.docker.com/installation/#installation) website.
-2.  **Mac & Windows:** install the [Docker Toolbox](https://www.docker.com/docker-toolbox) to get Docker installed easily.
+1.  **Linux:** Linux supports Docker out-of-box. You should follow the tutorial on the [Docker](https://docs.docker.com/installation/#installation) website.
+2.  **Mac & Windows:** install the [Docker Toolbox](https://www.docker.com/docker-toolbox) to get Docker installed.
 
 As the generated files are in your shared folder, they will not be deleted if you stop your Docker container. However, if you don't want Docker to keep downloading all the Maven and NPM dependencies every time you start the container, you should commit its state or mount a volume.
 
 <div class="alert alert-warning"><i>Warning: </i>
 
-Based on your OS, your <code>DOCKER_HOST</code> will differ. On Linux, it will be simply your localhost.
+Based on your OS, your <code>DOCKER_HOST</code> will differ. On Linux, it will be your localhost.
 For Mac/Windows, you will have to obtain the IP using following command: <code>docker-machine ip default</code>
 
 </div>
 
 <div class="alert alert-info"><i>Tip: </i>
 
-Kitematic is an easy-to-use graphical interface provided with the Docker Toolbox, which will makes this installation a lot easier.
+<a href="https://docs.docker.com/docker-for-windows/">Docker Desktop for Windows</a>/<a href="https://docs.docker.com/docker-for-mac/">Docker Desktop for Mac</a> is an easy-to-use graphical interface provided with the Docker Toolbox, which will make this installation a lot easier.
 
 </div>
 
@@ -142,7 +144,7 @@ Run the Docker image, with the following options:
 
 <div class="alert alert-info"><i>Tip: </i>
 
-If you have already started the container once before, you do not need to run the above command, you can simply start/stop the existing container.
+If you have already started the container once before, you do not need to run the above command, you can start/stop the existing container.
 
 </div>
 
@@ -155,8 +157,8 @@ To check that your container is running, use the command `docker container ps`:
 
 #### Common operations
 
-*   To stop the container execute: `docker container stop jhipster`
-*   And to start again, execute: `docker container start jhipster`
+*   To stop the container run: `docker container stop jhipster`
+*   And to start again, run: `docker container start jhipster`
 
 In case you update the Docker image (rebuild or pull from the Docker hub), it's better to remove the existing container, and run the container all over again. To do so, first stop the container, remove it and then run it again:
 
@@ -169,7 +171,7 @@ In case you update the Docker image (rebuild or pull from the Docker hub), it's 
 
 <div class="alert alert-warning"><i>Warning: </i>
 
-On Windows, you need to execute the Docker Quick Terminal as Administrator to be able to create symlinks during the `yarn install` step.
+On Windows, you need to run the Docker Quick Terminal as Administrator to be able to create symlinks during the `npm install` step.
 
 </div>
 
@@ -197,7 +199,7 @@ You can then go to the /home/jhipster/app directory in your container, and start
 
 <div class="alert alert-info"><i>Tip: </i>
 
-If you are having issues with Yarn, you can use <code>jhipster --npm</code>, to use NPM instead of Yarn.
+If you prefer using Yarn, you can use <code>jhipster --yarn</code>, to use Yarn instead of NPM.
 
 </div>
 
@@ -207,7 +209,7 @@ Once your application is created, you can run all the normal gulp/bower/maven co
 
 **Congratulations! You've launched your JHipster app inside Docker!**
 
-On your host machine, you should be able to :
+On your machine, you should be able to:
 
 *   Access the running application at `http://DOCKER_HOST:8080`
 *   Get all the generated files inside your shared folder
@@ -218,6 +220,7 @@ On your host machine, you should be able to :
     So you won't be able to:
     <ul>
         <li>use the docker-compose files</li>
-        <li>build a Docker image (Maven goal: <code>docker:build</code> or Gradle task: <code>buildDocker</code>)</li>
+        <li>build a Docker image with the docker daemon (Maven goal: <code>jib:dockerBuild</code> or Gradle task: <code>jibDockerBuild</code>)</li>
     </ul>
+    However, you will be able to use <a href="https://github.com/GoogleContainerTools/jib">jib</a>'s daemonless mode which can build a docker image and push it to a registry without access to a docker daemon (Maven goal: <code>jib:build</code> or Gradle task: <code>jibBuild</code>). But you will need to setup credentials to the docker registry as a pre-requisite of building the app. See the <a href="https://github.com/GoogleContainerTools/jib/tree/master/jib-maven-plugin#configuration">Jib plugin configuration documentations</a> for more details.
 </div>

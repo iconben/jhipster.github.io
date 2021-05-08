@@ -9,13 +9,13 @@ sitemap:
 
 # <i class="fa fa-bolt"></i> Creating microservices
 
-Microservices are a type of JHipster applications, that have no front-end (the Angular front-end must be generated on a [gateway]({{ site.url }}/api-gateway/)), and which work with the [JHipster Registry]({{ site.url }}/jhipster-registry/) to be configured, discovered, and managed.
+Microservices are a type of JHipster application, that have no front-end (the Angular front-end must be generated on a [gateway]({{ site.url }}/api-gateway/)), and which work with the [JHipster Registry]({{ site.url }}/jhipster-registry/) to be configured, discovered, and managed.
 
 ## <a name="generating_entities"></a> Generating entities in a microservices architecture
 
 Using the [entity sub-generator]({{ site.url }}/creating-an-entity/) works a little bit differently in a microservices architecture, as the front-end and the back-end codes are not located in the same application.
 
-First, generate the entities in the microservices applications: this works as usual, and you can also use [JHipster UML]({{ site.url }}/jhipster-uml/) or [JDL Studio]({{ site.url }}/jdl-studio/) to help you generate complex entities and relationships. As microservices don't have a front-end, no AngularJS code will be generated.
+First, generate the entities in the microservices applications: this works as usual, and you can also use [JHipster UML]({{ site.url }}/jhipster-uml/) or [JDL Studio](https://start.jhipster.tech/jdl-studio/) to help you generate complex entities and relationships. As microservices don't have a front-end, no Angular/React code will be generated.
 
 Then, on the gateway(s), run the entity sub-generator again. A new question will appear at the beginning, which is specific to gateways:
 
@@ -27,7 +27,7 @@ Then, on the gateway(s), run the entity sub-generator again. A new question will
 If your application uses an SQL database, JHipster proposes a different 2nd-level caching solution with microservices:
 
 - JHipster's default caching solution with microservices is Hazelcast
-- You can still choose Ehcache (the default solution with monolith applications) or choose not to use a cache at all
+- You can still choose Ehcache (the default solution with monolith applications) or Caffeine or choose not to use a cache at all
 
 This solution is the default with microservices, as in this architecture the idea is that you will scale your services:
 

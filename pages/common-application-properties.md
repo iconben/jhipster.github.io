@@ -4,7 +4,7 @@ title: Common application properties
 permalink: /common-application-properties/
 sitemap:
     priority: 0.7
-    lastmod: 2016-12-29T00:00:00-00:00
+    lastmod: 2018-03-18T18:20:00-00:00
 ---
 
 # <i class="fa fa-flask"></i> Common application properties
@@ -31,6 +31,7 @@ Those properties are configured using the `io.github.jhipster.config.JHipsterPro
 
 Here is a documentation for those properties:
 
+```YAML
     jhipster:
 
         # Thread pool that will be used for asynchronous method calls in JHipster
@@ -39,11 +40,18 @@ Here is a documentation for those properties:
             max-pool-size: 50 # Maximum pool size
             queue-capacity: 10000 # Queue capacity of the pool
 
+        # Specific configuration for JHipster gateways
+        # See https://www.jhipster.tech/api-gateway/ for more information on JHipster gateways
+        gateway:
+            rate-limiting:
+                enabled: false # Rate limiting is disabled by default
+                limit: 100_000L # By default we allow 100,000 API calls
+                duration-in-seconds: 3_600 # By default the rate limiting is reinitialized every hour
+            authorized-microservices-endpoints: # Access Control Policy, if left empty for a route, all endpoints will be accessible
+                app1: /api # recommended prod configuration, it allows the access to all API calls from the "app1" microservice
+
         # HTTP configuration
         http:
-            # V_1_1 for HTTP/1.1 or V_2_0 for HTTP/2.
-            # To use HTTP/2 you will need SSL support (see the Spring Boot "server.ssl" configuration)
-            version: V_1_1
             cache: # Used by io.github.jhipster.web.filter.CachingHttpHeadersFilter
                 timeToLiveInDays: 1461 # Static assets are cached for 4 years by default
 
@@ -52,9 +60,21 @@ Here is a documentation for those properties:
             hazelcast: # Hazelcast configuration
                 time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
                 backup-count: 1 # Number of objects backups
+                # Configure the Hazelcast management center
+                # Full reference is available at: http://docs.hazelcast.org/docs/management-center/3.9/manual/html/Deploying_and_Starting.html
+                management-center:
+                    enabled: false # Hazelcast management center is disabled by default
+                    update-interval: 3 # Updates are sent to the Hazelcast management center every 3 seconds by default
+                    # Default URL for Hazelcast management center when using JHipster's Docker Compose configuration
+                    # See src/main/docker/hazelcast-management-center.yml
+                    # Warning, the default port is 8180 as port 8080 is already used by JHipster
+                    url: http://localhost:8180/mancenter
             ehcache: # Ehcache configuration
                 time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
                 max-entries: 100 # Number of objects in each cache entry
+            caffeine: # Caffeine configuration
+                time-to-live-seconds: 3600 # By default objects stay 1 hour in the cache
+                max-entries: 100 # Number of objects in each cache entry    
             infinispan: #Infinispan configuration
                 config-file: default-configs/default-jgroups-tcp.xml
                 # local app cache
@@ -70,9 +90,30 @@ Here is a documentation for those properties:
                 replicated:
                     time-to-live-seconds: 60 # By default objects stay 1 hour (in minutes) in the cache
                     max-entries: 100 # Number of objects in each cache entry
+            # Memcached configuration
+            # Uses the Xmemcached library, see https://github.com/killme2008/xmemcached
+            memcached:
+                # Disabled by default in dev mode, as it does not work with Spring Boot devtools
+                enabled: true
+                servers: localhost:11211 # Comma or whitespace separated list of servers' addresses
+                expiration: 300 # Expiration time (in seconds) for the cache
+                use-binary-protocol: true # Binary protocol is recommended for performance (and security)
+                authentication: # if authentication is required you can set it with these parameters. Disabled by default
+                    enabled: false,
+                    # username: unset by default
+                    # password: unset by default
+            redis: # Redis configuration
+                expiration: 3600 # By default objects stay 1 hour (in seconds) in the cache
+                server: redis://localhost:6379 # Server address
+                cluster: false
+                connectionPoolSize: 64,
+                connectionMinimumIdleSize: 24,
+                subscriptionConnectionPoolSize: 50,
+                subscriptionConnectionMinimumIdleSize: 1
 
         # E-mail properties
         mail:
+            enabled: false # If e-mail sending is enabled. The standard `spring.mail` keys will need to be configured
             from: jhipster@localhost # The default "from" address for e-mails
             base-url: http://127.0.0.1:8080 # URL to the application, used inside e-mails
 
@@ -88,13 +129,12 @@ Here is a documentation for those properties:
                 client-secret: # OAuth client secret
             authentication:
                 jwt: # JHipster specific JWT implementation
-                    secret: # JWT secret key
+                    # The secret token should be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line).
+                    # If both properties are configured, the `secret` property has a higher priority than the `base64-secret` property.
+                    secret: # JWT secret key in clear text (not recommended)
+                    base64-secret:  # JWT secret key encoded in Base64 (recommended)
                     token-validity-in-seconds: 86400 # Token is valid 24 hours
                     token-validity-in-seconds-for-remember-me: 2592000 # Remember me token is valid 30 days
-                oauth: # Used by the JHipster OAuth 2 MongoDB specific implementation
-                    client-id: # OAuth client ID
-                    client-secret: # OAuth client secret
-                    token-validity-in-seconds: 1800 # Token is valid 30 minutes
 
         # Swagger configuration
         swagger:
@@ -108,6 +148,8 @@ Here is a documentation for those properties:
             contact-email:
             license:
             license-url:
+            host:
+            protocols:
 
         # DropWizard Metrics configuration, used by MetricsConfiguration
         metrics:
@@ -121,7 +163,6 @@ Here is a documentation for those properties:
                 port: 2003
                 prefix: jhipster
             # Send metrics to a Prometheus server
-            # Use the "prometheus" Maven profile to have the Prometheus dependencies
             prometheus:
                 enabled: false # Prometheus is disabled by default
                 endpoint: /prometheusMetrics
@@ -139,17 +180,18 @@ Here is a documentation for those properties:
             spectator-metrics: # Reports Netflix Spectator metrics in the logs
                 enabled: false # Spectator is disabled by default
 
-        # Spring Social specific configuration, for Twitter/Facebook/Google authentication
-        social:
-            redirect-after-sign-in: "/#/home" # Redirect URL after successful authentication
-
-        # By default cross-origin resource sharing (CORS) is disabled. Uncomment to enable.
-        # Configure a standard org.springframework.web.cors.CorsConfiguration
+        # By default cross-origin resource sharing (CORS) is enabled in "dev" mode for
+        # monoliths and gateways.
+        # It is disabled by default in "prod" mode for security reasons, and for microservices
+        # (as you are supposed to use a gateway to access them).
+        # This configures a standard org.springframework.web.cors.CorsConfiguration
+        # Note that "exposed-headers" is mandatory for JWT-based security, which uses
+        # the "Authorization" header, and which is not a default exposed header.
         cors:
             allowed-origins: "*"
-            allowed-methods: GET, PUT, POST, DELETE, OPTIONS
+            allowed-methods: "*"
             allowed-headers: "*"
-            exposed-headers:
+            exposed-headers: "Authorization"
             allow-credentials: true
             max-age: 1800
 
@@ -157,6 +199,7 @@ Here is a documentation for those properties:
         ribbon:
             # Comma-separated list of profiles that display a ribbon
             display-on-active-profiles: dev
+```
 
 ## <a name="3"></a> Application-specific properties
 

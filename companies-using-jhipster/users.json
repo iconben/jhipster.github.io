@@ -39,7 +39,7 @@
     {"name": "Orange",
       "url": "http://www.orange.com/",
       "logo": "orange.png",
-      "category": "Telecom",
+      "category": "Telecommunications",
       "country": "France"
     },
     {"name": "Engie",
@@ -315,7 +315,79 @@
     {"name": "SFR",
       "url": "https://www.sfr.fr/",
       "logo": "sfr.png",
-      "category": "Telecom",
+      "category": "Telecommunications",
+      "country": "France"
+    },
+    {"name": "Ministère de la Défense",
+      "url": "http://www.defense.gouv.fr/",
+      "logo": "ministere-de-la-defense.png",
+      "category": "Government",
+      "country": "France"
+    },
+    {"name": "Capgemini",
+      "url": "https://www.capgemini.com/",
+      "logo": "capgemini.png",
+      "category": "System Integrator",
+      "country": "France"
+    },
+    {"name": "CERN",
+      "url": "https://home.cern/",
+      "logo": "cern.png",
+      "category": "Research",
+      "country": "Switzerland"
+    },
+    {"name": "Rolls-Royce",
+      "url": "https://www.rolls-royce.com/",
+      "logo": "rolls-royce.png",
+      "category": "Industry",
+      "country": "United Kingdom"
+    },
+    {"name": "NTT Data Corporation",
+      "url": "https://www.nttdata.com/",
+      "logo": "ntt-data.png",
+      "category": "Telecommunications",
+      "country": "Japan"
+    },
+    {"name": "Leroy Merlin",
+      "url": "https://www.leroymerlin.fr/",
+      "logo": "leroy-merlin.png",
+      "category": "Retail",
+      "country": "France"
+    },
+    {"name": "XebiaLabs",
+      "url": "https://xebialabs.com/",
+      "logo": "xebialabs.jpg",
+      "category": "Enterprise DevOps",
+      "country": "Netherlands"
+    },
+    {"name": "Carrefour",
+      "url": "https://www.carrefour.fr/",
+      "logo": "carrefour.png",
+      "category": "Retail",
+      "country": "France"
+    },
+    {"name": "Bank of the West",
+      "url": "https://www.bankofthewest.com/",
+      "logo": "bank-of-the-west.png",
+      "category": "Finance",
+      "country": "USA"
+    },
+    {"name": "Octo Consulting Group",
+      "url": "https://www.octoconsulting.com/",
+      "logo": "octoconsulting.png",
+      "category": "System Integrator",
+      "country": "USA"
+    },
+    {"name": "Software AG",
+      "url": "https://www.softwareag.com",
+      "logo": "softwareag.png",
+      "category": "Software Editor",
+      "country": "Germany"
+    },
+    {"name": "SII",
+      "url": "http://www.sii.fr",
+      "logo": "sii.png",
+      "category": "System Integrator",
       "country": "France"
     },
     {"name": "K2innovation",
@@ -695,6 +767,381 @@
     },
     {"name": "TenMax",
       "url": "https://www.tenmax.io"
+    },
+    {"name": "Segasec",
+      "url": "https://segasec.com"
+    },
+    {"name": "infoowl",
+      "url": "http://www.infoowl.net/"
+    },
+    {"name": "Wanari Lft",
+      "url": "http://www.wanari.com/"
+    },
+    {"name": "Ground Gurus",
+      "url": "https://www.groundgurus.ph/"
+    },
+    {"name": "coinv",
+      "url": "http://www.coinv.com/"
+    },
+    {"name": "Kellton Tech Solutions Ltd.",
+      "url": "https://www.kelltontech.com/"
+    },
+    {"name": "Massive",
+      "url": "https://www.massive.co/"
+    },
+    {"name": "DB1",
+      "url": "http://www.db1.com.br/"
+    },
+    {"name": "Néovia",
+      "url": "https://sineo.neovia.fr/"
+    },
+    {"name": "Famoco",
+      "url": "https://www.famoco.com/"
+    },
+    {"name": "Fresh Gravity",
+      "url": "http://www.freshgravity.com/"
+    },
+    {"name": "Endado.com",
+      "url": "https://www.endado.com/"
+    },
+    {"name": "CS Systèmes d'information",
+      "url": "http://www.c-s.fr/"
+    },
+    {"name": "Sonalake",
+      "url": "https://sonalake.com/"
+    },
+    {"name": "Exus",
+      "url": "http://www.exus.co.uk/"
+    },
+    {"name": "Nammanimmacycle Foundation",
+      "url": "http://www.nammanimmacycle.org/"
+    },
+    {"name": "Mediastep Vietnam",
+      "url": "http://www.mediastep.com/"
+    },
+    {"name": "Polarising",
+      "url": "https://www.polarising.com/"
+    },
+    {"name": "Lnet Communication",
+      "url": "http://www.lnet.ma/"
+    },
+    {"name": "Donyapardaz",
+      "url": "http://donyapardaz.com/"
+    },
+    {"name": "Steradian Consulting",
+      "url": "http://steradian.co.id/"
+    },
+    {"name": "RSTN Consulting",
+      "url": "http://www.rstn.com/"
+    },
+    {"name": "Mimacom",
+      "url": "http://www.mimacom.com/"
+    },
+    {"name": "Vuvu",
+      "url": "https://vuvu.am/"
+    },
+    {"name": "Keleo Solutions",
+      "url": "http://www.keleo-solutions.com/"
+    },
+    {"name": "CI Wise Inc.",
+      "url": "https://ciwise.com/"
+    },
+    {"name": "DXC technology",
+      "url": "https://www.dxc.technology/"
+    },
+    {"name": "New High Glass",
+      "url": "http://newhighglass.net/"
+    },
+    {"name": "visualchina",
+      "url": "https://500px.me/"
+    },
+    {"name": "Sarifo's Tech Solutions",
+      "url": "https://www.sarifostech.com"
+    },
+    {"name": "fullstack3 Limited",
+      "url": "https://www.wama.cloud/"
+    },
+    {"name": "Naru Ltd.",
+      "url": "https://www.naru.tn/"
+    },
+    {"name": "Big Bang Soft",
+      "url": "http://bigbangsoft.fr/"
+    },
+    {"name": "Code Match",
+      "url": "https://www.code-match.io"
+    },
+    {"name": "Hyperchilli",
+      "url": "http://www.hyperchilli.com/"
+    },
+    {"name": "CodeRobot",
+      "url": "http://coderobot.com.mx/"
+    },
+    {"name": "Studio Diseno Innovative Solutions Pvt Ltd",
+      "url": "http://studiodiseno.com/"
+    },
+    {"name": "Grupo Kinexo",
+      "url": "http://grupokinexo.com/"
+    },
+    {"name": "Fentime",
+      "url": "https://www.fentime.com/"
+    },
+    {"name": "RnD4U",
+      "url": "https://software.rnd4u.com/"
+    },
+    {"name": "Fralog",
+      "url": "http://www.fralog.com/"
+    },
+    {"name": "IPROSONIC",
+      "url": "http://iprosonic.com/"
+    },
+    {"name": "keybin",
+      "url": "https://keybin.io"
+    },
+    {"name": "M-Way Solutions GmbH",
+      "url": "https://www.mwaysolutions.com"
+    },
+    {"name": "Innocraft Oy",
+      "url": "http://www.innocraft.fi/"
+    },
+    {"name": "EagleIA",
+      "url": "http://www.eagleia.co.uk/"
+    },
+    {"name": "Cherrystay",
+      "url": "https://cherrystay.com/"
+    },
+    {"name": "Red Froggy",
+      "url": "https://www.redfroggy.fr/"
+    },
+    {"name": "iSteer Technologies",
+      "url": "http://isteer.com/"
+    },
+    {"name": "Matrics",
+      "url": "https://www.matrics.io/"
+    },
+    {"name": "Divertap",
+      "url": "http://www.divertap.com/"
+    },
+    {"name": "YihaiKarry",
+      "url": "http://www.yihaikerry.net.cn/"
+    },
+    {"name": "Itarium Technologies PVT. LTD",
+      "url": "http://itariumtech.com/"
+    },
+    {"name": "1DealTech Sas",
+      "url": "http://1dealtech.site/"
+    },
+    {"name": "Lenines",
+      "url": "http://lenines.com/"
+    },
+    {"name": "Intesys",
+      "url": "https://www.intesys.it/"
+    },
+    {"name": "Iprosonic",
+      "url": "https://iprosonic.com/"
+    },
+    {"name": "Exodus SA",
+      "url": "https://www.exodussa.gr/"
+    },
+    {"name": "Mobile Hipster",
+      "url": "https://www.mobilehipster.com/"
+    },
+    {"name": "e2y",
+      "url": "https://www.e2y.co.uk/"
+    },
+    {"name": "Brocke UG",
+      "url": "https://www.brocke.org/"
+    },
+    {"name": "Prosodie",
+      "url": "https://www.prosodie.com/"
+    },
+    {"name": "M2i-SA",
+      "url": "http://m2i-sa.com/"
+    },
+    {"name": "猎票",
+      "url": "http://www.liepiaowang.com/"
+    },
+    {"name": "Flabber technology and services",
+      "url": "https://flabbertech.com/"
+    },
+    {"name": "bivani IT-Studios",
+      "url": "https://www.bivani.de/"
+    },
+    {"name": "Teachoo",
+      "url": "https://www.teachoo.com/"
+    },
+    {"name": "Apeiron Technologies",
+      "url": "http://apeyron.tech/"
+    },
+    {"name": "Sun Technologies Inc",
+      "url": "http://www.suntechnologies.com/"
+    },
+    {"name": "Axess Lab",
+      "url": "http://axesslab.com/"
+    },
+    {"name": "Lava Labs",
+      "url": "https://lavalabs.net/"
+    },
+    {"name": "Softdog",
+      "url": "https://softdog.pl/#/"
+    },
+    {"name": "QualityMinds GmbH",
+      "url": "https://qualityminds.de/"
+    },
+    {"name": "Armedia LLC",
+      "url": "https://www.armedia.com/"
+    },
+    {"name": "Ivert srl",
+      "url": "https://ivert.it"
+    },
+    {"name": "Ideationz",
+      "url": "http://www.ideationz.in/"
+    },
+    {"name": "Evolve Back",
+      "url": "https://www.evolveback.com/"
+    },
+    {"name": "Palo IT",
+      "url": "http://palo-it.com/"
+    },
+    {"name": "Taiger",
+      "url": "https://taiger.com/"
+    },
+    {"name": "HIVEO",
+      "url": "https://www.hiveo.fr/"
+    },
+    {"name": "Jobware",
+      "url": "https://www.jobware.de/"
+    },
+    {"name": "Humanbee AB",
+      "url": "http://humanbee.se/"
+    },
+    {"name": "Wolters Kluwer",
+      "url": "https://www.wkelmsolutions.com/"
+    },
+    {"name": "Continuum+",
+      "url": "http://www.continuumplus.net/"
+    },
+    {"name": "Raster Images Private Limited",
+      "url": "http://www.raster.in/"
+    },
+    {"name": "AiHello",
+      "url": "https://www.aihello.com/"
+    },
+    {"name": "Sonatel",
+      "url": "http://www.sonatel.sn/"
+    },
+    {"name": "Add Value Spa",
+      "url": "https://www.addvalue.it/"
+    },
+    {"name": "Aparna Systems",
+      "url": "http://aparnasystems.com/"
+    },
+    {"name": "neoSearch UG",
+      "url": "https://urteile-gesetze.de/"
+    },
+    {"name": "PureThink",
+      "url": "https://purethink.com/"
+    },
+    {"name": "Rohrer Revolution GmbH",
+      "url": "https://www.rohrer-revolution.ch/"
+    },
+    {"name": "Meta Functions Pvt. Ltd.",
+      "url": "http://metafns.com/"
+    },
+    {"name": "HBT",
+      "url": "http://hbt.de"
+    },
+    {"name": "Softworld VietNam Ltd",
+      "url": "https://softworldvietnam.com/"
+    },
+    {"name": "FNC IT",
+      "url": "http://fncit.com.br/"
+    },
+    {"name": "Guanaco Software",
+      "url": "http://guanacosoftware.com.ar/"
+    },
+    {"name": "Flowinn",
+      "url": "https://www.flowinn.biz/"
+    },
+    {"name": "We Are One",
+      "url": "https://weareone.ch/"
+    },
+    {"name": "DBlandIT",
+      "url": "https://www.dblandit.com/"
+    },
+    {"name": "Factly Media & Research",
+      "url": "https://factly.in/"
+    },
+    {"name": "Softech Data Solutions",
+      "url": "http://softechdatasolutions.com/"
+    },
+    {"name": "Bil Yazılım San. Tic. Ltd. Şti.",
+      "url": "https://www.bilyazilim.com/"
+    },
+    {"name": "Afnetic",
+      "url": "http://www.afnetic.com"
+    },
+    {"name": "Norsys",
+      "url": "https://www.norsys.fr"
+    },
+    {"name": "Simple Step Solutions",
+      "url": "https://simplestep.ca"
+    },
+    {"name": "tado GmbH",
+      "url": "https://www.tado.com/"
+    },
+    {"name": "Techgentsia Software Technologies",
+      "url": "https://www.techgentsia.com/"
+    },
+    {"name": "Eurohelp Consulting",
+      "url": "https://www.eurohelp.es/"
+    },
+    {"name": "openmind",
+      "url": "https://www.openmindonline.it/"
+    },
+    {"name": "LIBAL Deutschland GmbH",
+      "url": "http://www.libal-tech.de/"
+    },
+    {"name": "DJavaFactory Sdn Bhd",
+      "url": "http://djavafactory.com/"
+    },
+    {"name": "Chunker",
+      "url": "https://www.chunker.com/"
+    },
+    {"name": "Senofi",
+      "url": "https://www.senofi.ca/"
+    },
+    {"name": "Wipro Digital",
+      "url": "https://wiprodigital.com/"
+    },
+    {"name": "Combridge-ITC",
+      "url": "https://combridge-itc.de/"
+    },
+    {"name": "Developtic",
+      "url": "https://www.developtic.com/"
+    },
+    {"name": "Lagarsoft",
+      "url": "https://www.lagarsoft.com/"
+    },
+    {"name": "Limmo DVF",
+      "url": "https://limmo-dvf.com/"
+    },
+    {"name": "Free SN",
+      "url": "https://free.sn/"
+    },
+    {"name": "Beroe Inc",
+      "url": "https://live.beroeinc.com/"
+    },
+    {"name": "Corvisio",
+      "url": "https://corvisio.com/"
+    },
+    {"name": "Albert Solino",
+      "url": "https://www.albertsolino.com/"
+    },
+    {"name": "Prosoftly",
+      "url": "https://www.prosoftly.com/"
+    },
+    {"name": "Raster Images",
+      "url": "https://www.raster.in/"
     }
   ]
 }

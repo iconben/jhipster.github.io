@@ -6,14 +6,14 @@ redirect_from:
   - /creating_an_entity.html
 sitemap:
     priority: 0.7
-    lastmod: 2014-10-10T00:00:00-00:00
+    lastmod: 2018-09-04T00:00:00-00:00
 ---
 
 # <i class="fa fa-bolt"></i> Creating an entity
 
 _**Please check our [video tutorial]({{ site.url }}/video-tutorial/) on creating a new JHipster application!**_
 
-**Important** if you want to have "live reload" of your JavaScript/TypeScript code, you will need run `gulp` (for JavaScript/AngularJS 1) or `yarn start` (for TypeScript/Angular 2+). You can go to the [Using JHipster in development]({{ site.url }}/development/) page for more information.
+**Important** if you want to have "live reload" of your JavaScript/TypeScript code, you will need to run `npm start` or `yarn start`. You can go to the [Using JHipster in development]({{ site.url }}/development/) page for more information.
 
 ## Introduction
 
@@ -34,16 +34,24 @@ If you have several entities, you will likely want to have relationships between
 *   A database foreign key
 *   Specific JavaScript and HTML code for managing this relationship
 
-The "entity" sub-generator will create all the necessary files, and provide a CRUD front-end for each entity (see [project structure]({{ site.url }}/using-angularjs/)). The sub generator can be invoked by running `jhipster entity <entityName> --[options]`. Reference for those options can be found by typing `jhipster entity --help`
+The "entity" sub-generator will create all the necessary files, and provide a CRUD front-end for each entity (see [Angular project structure]({{ site.url }}/using-angular/) and [React project structure]({{ site.url }}/using-react/)). The sub generator can be invoked by running `jhipster entity <entityName> --[options]`. Reference for those options can be found by typing `jhipster entity --help`
 
 Below are the supported options.
 
 *   `--table-name <table_name>` - By default JHipster will generate a table name based on your entity name, if you would like to have a different table name you can do so by passing this option.
 *   `--angular-suffix <suffix>` - If you want all your Angular routes to have a custom suffix you can pass that using this option.
+*   `--client-root-folder <folder-name>` - Use a root folder name for entities on the client side. By default it's empty for monoliths and the name of the microservice for gateways.
 *   `--regenerate` - This will regenerate an existing entity without asking any questions.
 *   `--skip-server` - This will skip the server-side code and will generate only the client-side code.
 *   `--skip-client` - This will skip the client-side code and will generate only the server-side code.
+*   `--skip-db-changelog` - This will skip generation of database changelog (using Liquibase for SQL databases).
 *   `--db` - Specify the database when skipping server side generation, has no effect otherwise.
+
+<div class="alert alert-warning"><i>Warning: </i>
+
+Don't choose a short name for your entity (see <a href="https://github.com/jhipster/generator-jhipster/issues/8446" target="_blank" rel="noopener">this ticket</a>).
+
+</div>
 
 ## JHipster UML and JDL Studio
 
@@ -52,11 +60,24 @@ This page describes how to create entities with JHipster using the standard comm
 In that case, two options are available:
 
 *   [JHipster UML]({{ site.url }}/jhipster-uml/), which allows you to use an UML editor.
-*   [JDL Studio]({{ site.url }}/jdl-studio/), our online tool to create entities and relationships using our domain-specific language [JDL]({{ site.url }}/jdl/).
+*   [JDL Studio](https://start.jhipster.tech/jdl-studio/), our online tool to create entities and relationships using our domain-specific language [JDL]({{ site.url }}/jdl/).
 
 If you used the JDL Studio:
 
 *   You can generate entities from a JDL file using the `import-jdl` sub-generator, by running `jhipster import-jdl your-jdl-file.jh`.
+
+    * If you do not want to regenerate your entities, while importing a JDL, you can use the `--json-only` flag to skip entity creation part and create only the json files in `.jhipster` folder.
+
+    ```
+    jhipster import-jdl ./my-jdl-file.jdl --json-only
+    ```
+
+    * By default `import-jdl` regenerates only entities which have changed, if you want all your entities to be regenerated then pass in the `--force`  flag. Please note that this will overwrite all your local changes to the entity files
+
+    ```
+    jhipster import-jdl ./my-jdl-file.jdl --force
+    ```
+
 *   If you want to use JHipster UML instead of the `import-jdl` sub-generator, you need to install it by running `npm install -g jhipster-uml`, and then run `jhipster-uml yourFileName.jh`.
 
 ## Entity fields
@@ -81,6 +102,8 @@ JHipster supports many field types. This support depends on your database backen
 *   `LocalDate`: A [java.time.LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html) object, used to correctly manage dates in Java.
 *   `Instant`: A [java.time.Instant](https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html) object, used to represent a timestamp, an instantaneous point on the time-line.
 *   `ZonedDateTime`: A [java.time.ZonedDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html) object, used to represent a local date-time in a given timezone (typically a calendar appointment). Note that time zones are neither supported by the REST nor by the persistence layers so you should most probably use `Instant` instead.
+*   `Duration`: A [java.time.Duration](https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html) object, used to represent an amount of time.
+*   `UUID`: A [java.util.UUID](https://docs.oracle.com/javase/8/docs/api/java/util/UUID.html).
 *   `Boolean`: A Java Boolean.
 *   `Enumeration`: A Java Enumeration object. When this type is selected, the sub-generator will ask you what values you want in your enumeration, and it will create a specific `enum` class to store them.
 *   `Blob`: A Blob object, used to store some binary data. When this type is selected, the sub-generator will ask you if you want to store generic binary data, an image object, or a CLOB (long text). Images will be handled specifically on the Angular side, so they can be displayed to the end-user.
@@ -91,7 +114,7 @@ Validation can be set up for each field. Depending on the field type, different 
 
 Validation will be automatically generated on:
 
-*   the HTML views, using [the AngularJS validation mechanism](https://docs.angularjs.org/guide/forms)
+*   the HTML views, using the Angular or React or Vue validation mechanism
 *   the Java domain objects, using [Bean Validation](http://beanvalidation.org/)
 
 Bean validation will then be used to automatically validate domain objects when they are used in:
@@ -102,11 +125,12 @@ Bean validation will then be used to automatically validate domain objects when 
 Validation information will also be used to generate more precise database column metadata:
 
 *   Required fields will be marked non-nullable
+*   Unique fields will create a unique constraint
 *   Fields which have a maximum length will have the same column length
 
 Validation has a few limitations:
 
-*   We don't support all validation options from AngularJS and Bean Validation, as we only support those which are common to both APIs
+*   We don't support all validation options from Angular, React and Bean Validation, as we only support those which are common to both client and server APIs
 *   Regular Expression patterns don't work the same in JavaScript and in Java, so if you configure one, you might need to tweak one of the generated patterns
 *   JHipster generates unit tests that work for generic entities, without knowing your validation rules: it is possible that the generated tests do not pass the validation rules. In that case, you will need to update the sample values used in your unit tests, so that they pass the validation rules.
 
@@ -114,21 +138,30 @@ Validation has a few limitations:
 
 Entity relationships are only available for SQL databases. It is a fairly complex subject, which has its own documentation page: [Managing relationships]({{ site.url }}/managing-relationships/).
 
+## Generating a separate service class for your business logic
+
+Having a separate service class allows to have more complex logic compared to using a Spring REST Controller directly. Having a service layer (with or without an interface) will allow you to use DTOs (see next section).
+
+This is the same logic as using the [Spring service sub-generator]({{ site.url }}/creating-a-spring-service/), so we recommend to read its documentation to have more information.
+
 ## Data Transfer Objects (DTOs)
 
-By default JHipster entities do not use DTOs, but they are available as an option. Here is the documentation: [Using DTOs]({{ site.url }}/using-dtos/).
+By default JHipster entities do not use DTOs, but they are available as an option, if you choose to have a service layer (see previous section). Here is the documentation: [Using DTOs]({{ site.url }}/using-dtos/).
+
+## Filtering
+
+Optionally, entities stored in SQL databases can be filtered using JPA. Here is the documentation: [Filtering your entities]({{ site.url }}/entities-filtering/).
 
 ## Pagination
 
-Please note that pagination is not available if you created your application with [Cassandra]({{ site.url }}/using-cassandra/). Of course this will be added in a future release.
+Please note that pagination is not available if you created your application with [Cassandra]({{ site.url }}/using-cassandra/). This will be added in a future release.
 
-Pagination uses [the Link header](http://tools.ietf.org/html/rfc5988), as in the [GitHub API](https://developer.github.com/v3/#pagination). JHipster provides a custom implementation of this specification on both the server (Spring MVC REST) and client (AngularJS) sides.
+Pagination uses [the Link header](http://tools.ietf.org/html/rfc5988), as in the [GitHub API](https://developer.github.com/v3/#pagination). JHipster provides a custom implementation of this specification on both the server (Spring MVC REST) and client (Angular/React) sides.
 
 When the entity is generated, JHipster provides 4 pagination options:
 
 *   No pagination (in that case, the back-end won't be paginated)
-*   A simple pager, based on [the Bootstrap pager](http://getbootstrap.com/components/#pagination-pager)
-*   A complete pagination system, based on [the Bootstrap pagination component](http://getbootstrap.com/components/#pagination)
+*   A complete pagination system, based on [the Bootstrap pagination component](https://getbootstrap.com/docs/4.3/components/pagination/){: target="_blank"}
 *   An infinite scroll system, based on [the infinite scroll directive](http://sroze.github.io/ngInfiniteScroll/)
 
 ## Updating an existing entity
@@ -137,7 +170,7 @@ The entity configuration is saved in a specific `.json` file, in the `.jhipster`
 
 When you run the entity sub-generator for an existing entity, you will be asked a question 'Do you want to update the entity? This will replace the existing files for this entity, all your custom code will be overwritten' with following options:
 
-*   `Yes, re generate the entity` - This will just regenerate your entity. Tip: This can be forced by passing a `--regenerate` flag when running the sub-generator
+*   `Yes, re generate the entity` - This will regenerate your entity. Tip: This can be forced by passing a `--regenerate` flag when running the sub-generator
 *   `Yes, add more fields and relationships` - This will give you questions to add more fields and relationships
 *   `Yes, remove fields and relationships` - This will give you questions to remove existing fields and relationships from the entity
 *   `No, exit` - This will exist the sub-generator without changing anything
@@ -159,7 +192,7 @@ TIP: to regenerate all your entities at once, you can use the following commands
 
 This is a short tutorial on creating two entities (a Author and a Book) which have a one-to-many relationship.
 
-**Important** if you want to have "live reload" of your JavaScript/TypeScript code, you will need run `gulp` (for JavaScript/AngularJS 1) or `yarn start` (for TypeScript/Angular 2+). You can go to the [Using JHipster in development]({{ site.url }}/development/) page for more information.
+**Important** if you want to have "live reload" of your JavaScript/TypeScript code, you will need run `npm start` or `yarn start`. You can go to the [Using JHipster in development]({{ site.url }}/development/) page for more information.
 
 ### Generate the "Author" entity
 
@@ -202,7 +235,7 @@ Check the database tables, to see if your data is correctly inserted.
 
 ### Improve the generated code
 
-The generated files contain all the basic CRUD operations, and don't need to be modified if your needs are simple.
+The generated files contain all the basic CRUD operations, and don't need to be modified if you don't need more than CRUD operations.
 
 If you want to modify the generated code or the database schema, you should follow our [development guide]({{ site.url }}/development/)
 

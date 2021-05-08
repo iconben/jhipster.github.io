@@ -38,8 +38,10 @@ $('.navbar-collapse ul li a').click(function () {
         GHService.getGitHubConfig('jhipster', 'generator-jhipster').success(function (data) {
             $scope.gitConfig = data;
         });
+        $scope.gitContributors = '600+';
+        /*
+        // Commented out as this isn't efficient now we have 400+ contributors
         var page = 0;
-        $scope.gitConftributors = '...';
         var noOfContributors = 0;
         function getContributors(){
 
@@ -49,13 +51,14 @@ $('.navbar-collapse ul li a').click(function () {
                     page ++;
                     getContributors();
                 } else {
-                    // some how there seems to be additional 30 added to actual number, so dirty hack
-                    $scope.gitConftributors = noOfContributors - 30;
+                    // some how there seems to be losing 39 to actual number, so dirty hack
+                    $scope.gitContributors = noOfContributors + 39;
                 }
             });
         }
 
         getContributors();
+        */
 
         NpmService.getNpmDownloadsLastMonth('generator-jhipster').success(function (data) {
             $scope.npmDownloads = data.downloads;

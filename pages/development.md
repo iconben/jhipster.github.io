@@ -15,12 +15,11 @@ _**Please check our [video tutorial]({{ site.url }}/video-tutorial/) on creating
 
 ## Summary
 
-1. [General configuration](#general-configuration)
-2. [Running the Java server](#running-java-server)
-3. [Working with AngularJS 1](#working-with-angularjs-1)
-4. [Working with Angular](#working-with-angular)
-5. [Using a database](#using-a-database)
-6. [Internationalization](#internationalization)
+1.  [General configuration](#general-configuration)
+2.  [Running the Java server](#running-java-server)
+3.  [Working with Angular/React](#working-with-angular)
+4.  [Using a database](#using-a-database)
+5.  [Internationalization](#internationalization)
 
 ## <a name="general-configuration"></a> General configuration
 
@@ -40,7 +39,7 @@ If you want to configure some specific JHipster properties, have a look at the [
 
 ### As a "main" Java class
 
-From your IDE, right-click on the "Application" class at the root of your Java package hierarchy, and run it directly. You should also be able to debug it as easily.
+From your IDE, right-click on the "Application" class at the root of your Java package hierarchy, and run it directly. You should also be able to debug it from your IDE.
 
 The application will be available on [http://localhost:8080](http://localhost:8080).
 
@@ -56,6 +55,10 @@ You can launch the Java server with Maven. JHipster provides a Maven wrapper, so
 
 The application will be available on [http://localhost:8080](http://localhost:8080).
 
+If you will use live reload with `npm start` or `yarn start` then you can speed up server start up by excluding webpack tasks by:
+
+`./mvnw -P-webpack`
+
 Alternatively, if you have installed Maven, you can launch the Java server with Maven:
 
 `mvn`
@@ -70,88 +73,29 @@ If you selected the Gradle option, JHipster provides a Gradle wrapper, so you do
 
 (this will run our default Gradle task, `bootRun`)
 
+The application will be available on [http://localhost:8080](http://localhost:8080).
+
+If you will use live reload with `npm start` or `yarn start` then you can speed up server start up by excluding webpack tasks by:
+
+`./gradlew -x webpack`
+
 Alternatively, if you have installed Gradle, you can launch the Java server with Gradle:
 
 `gradle`
 
-The application will be available on [http://localhost:8080](http://localhost:8080).
-
 If you want more information on using Gradle, please go to [https://gradle.org](https://gradle.org)
 
-## <a name="working-with-angularjs-1"></a> Working with AngularJS 1
-
-### Using the Java server and Gulp together
-
-_We highly recommend you use this feature, as it allows to have live reloading of your client-side code._
-
-You can use Gulp to work on the client-side JavaScript application:
-
-`gulp`
-
-(this will run our default Gulp task, `serve`)
-
-This should open up your Web browser, with live reload enabled, on [http://localhost:9000](http://localhost:9000). This works thanks to [BrowserSync](http://www.browsersync.io/), and you can access its administration screen on [http://localhost:3001](http://localhost:3001).
-
-This provides very impressive features:
-
-*   As soon as you modify one of your HTML/CSS/JavaScript file, your browser will refresh itself automatically
-*   As soon as you add/remove a javascript file it will be added to the `index.html`, your browser will refresh itself automatically
-*   When you test your application on several different browsers or devices, all your clicks/scrolls/inputs should be automatically synchronized on all screens
-
-This Gulp task has a proxy to the REST endpoints on the Java server which we just launched (on [http://localhost:8080/api](http://localhost:8080/api)), so it should be able to do live REST requests to the Java back-end.
-
-If you have generated your application with the Sass option, your templates should also be automatically compiled into CSS.
-
-_Tips'n tricks_
-
-*   In some browsers (like Chrome), your HTML/CSS/JS resources can be cached, and hence can have some trouble getting live-reloaded. To force them to be reloaded, open up the "developer console" and select "Disable cache (while DevTools is open)".
-*   As the Gulp server proxies request to the Java server, all REST requests will fail if the Java server is down. So if your Gulp server shows a blank screen, the first thing to check is if the Java server is running at `http://127.0.0.1:8080`.
-
-### Other Gulp tasks
-
-We use eslint for AngularJS javascript linting, you can run `gulp eslint` to lint your AngularJS files. You can also run `gulp eslint:fix` if you want eslint to fix some minor issues like formatting etc,.
-
-You can run `gulp install` to run all bootstrapping tasks in one go
-
-You can run `gulp build` to build an optimized version of your client side files under the target|build/www folder
-
-By default you will get onscreen notifications for any errors or failures during gulp tasks, pass an argument `--no-notification` to disable notifications.
-
-If you want more information on using Gulp, please go to [http://gulpjs.com](http://gulpjs.com).
-
-## Using Bower to install and update JavaScript, CSS and Sass dependencies
-
-You can use bower to update your JavaScript, CSS and Sass dependencies:
-
-`bower update`
-
-Or if you want to install a new JavaScript, CSS or Sass dependency:
-
-`bower install <package> --save`
-
-Your JavaScript, CSS or Sass dependencies will be stored in your `src/main/webapp/bower_components` folder, and we believe it is a good idea to store them in your Git repository (but JHipster does not force you to do so).
-
-If the installed dependency contains JavaScript files they will automatically be injected into your `index.html` and `karma.conf.js` files. Likewise the CSS files will be injected into the `index.html` file, and the SCSS files into the `main.scss`.
-
-However this will only work if the Gulp server is running. If it is not running they will be injected next time you run `gulp`.
-
-Or, if you want to trigger the injection manually, just run:
-
-`gulp inject:dep`
-
-If you want more information on using Bower, please go to [http://bower.io](http://bower.io). For more information on using Gulp Inject, please go to [https://github.com/klei/gulp-inject](https://github.com/klei/gulp-inject).
-
-## <a name="working-with-angular"></a> Working with Angular
+## <a name="working-with-angular"></a> Working with Angular/React
 
 ### Running Webpack
 
 _This step is required to see changes in your TypeScript code and have live reloading of your client-side code._
 
-Running Webpack is the default task in the `package.json` file, so you just need to run:
+Running Webpack is the default task in the `package.json` file, so it is enough to run:
 
-`yarn start`
+`npm start`
 
-(or, if you use NPM, `npm start`).
+(or, if you use Yarn, `yarn start`).
 
 This provides very impressive features:
 
@@ -165,29 +109,32 @@ This will launch:
 - A BrowserSync task that will run on [http://localhost:9000/](http://localhost:9000/), which has a proxy to [http://localhost:9060/](http://localhost:9060/) (the Webpack "hot module reload" server), and which will synchronize the user's clicks/scrolls/inputs
 - The BrowserSync UI, which will be available on [http://localhost:3001/](http://localhost:3001/)
 
-### Running Yarn
+**NOTE:** BrowserSync by default enables [ghostMode](https://browsersync.io/docs/options#option-ghostMode) which can create some confusion
+especially [when using multiple browser tabs](https://github.com/jhipster/generator-jhipster/issues/11116#issuecomment-589362814). To avoid
+this you can always turn off ghostMode. Some commented code is provided in `webpack.dev.js` for easy disabling of ghostMode. 
 
-Direct project dependencies are configured into `package.json`, but transitive dependencies are defined into the `yarn.lock` file, that get generated when `yarn install` is run.
+### Running NPM
 
-It is advised to check `yarn.lock` [into source control](https://yarnpkg.com/en/docs/yarn-lock#toc-check-into-source-control), so that all team members of a project have the same versions of all dependencies. Running `yarn install` again will regenerate the `yarn.lock` with the latest versions of transitive dependencies.
+Direct project dependencies are configured into `package.json`, but transitive dependencies are defined into the `package-lock.json` file, that get generated when `npm install` is run.
 
-### Other Yarn/NPM tasks
+It is advised to check [`package-lock.json`](https://docs.npmjs.com/files/package-lock.json) into source control, so that all team members of a project have the same versions of all dependencies. Running `npm install` again will regenerate the `package-lock.json` with the latest versions of transitive dependencies.
 
-Those tasks are the same whether you use Yarn or NPM, we use the `yarn` command as an example but you can replace it with `npm`.
+### Other NPM/Yarn tasks
 
-- `yarn lint`: check for code style issues in the TypeScript code
-- `yarn lint:fix`: try to automatically correct TypeScript lint issues
-- `yarn tsc`: compile the TypeScript code
-- `yarn test`: run unit tests with Karma
-- `yarn test:watch`: keep the karma unit tests running, for live feedback when code is changed
-- `yarn e2e`: run "end to end" tests with Protractor (only works if the Protractor option has been selected when the project was generated)
+Those tasks are the same whether you use NPM or Yarn, we use the `npm` command as an example but you can replace it with `yarn`.
 
+- `npm run lint`: check for code style issues in the TypeScript code
+- `npm run lint:fix`: try to automatically correct TypeScript lint issues
+- `npm run tsc`: compile the TypeScript code
+- `npm run test`: run unit tests with Jest
+- `npm run test:watch`: keep the Jest unit tests running, for live feedback when code is changed
+- `npm run e2e`: run "end to end" tests with Protractor (only works if the Protractor option has been selected when the project was generated)
 
 ## <a name="using-a-database"></a> Using a database
 
 ### Running a database
 
-If you use a non-embedded database, like MySQL, MariaDB, PostgreSQL, MSSQL, MongoDB or Cassandra, you will need to install and configure that database.
+If you use a non-embedded database, like MySQL, MariaDB, PostgreSQL, MSSQL, MongoDB, Cassandra or Couchbase, you will need to install and configure that database.
 
 The easiest and recommended way with JHipster is to use Docker Compose. [Follow our Docker Compose guide here.]({{ site.url }}/docker-compose/)
 
@@ -214,6 +161,17 @@ This option is bit more complex than using H2, but you have a some important ben
 *   Your application starts a little bit faster
 *   You can use the great `./mvnw liquibase:diff` goal (see below)
 
+**Note**: for MySQL, you probably need to start your database with these options:
+
+*   `--lower_case_table_names=1` : see the [documentation](https://dev.mysql.com/doc/refman/5.7/en/identifier-case-sensitivity.html)
+*   `--skip-ssl` : see the [documentation](https://dev.mysql.com/doc/refman/5.7/en/encrypted-connection-options.html#option_general_ssl)
+*   `--character_set_server=utf8` : see the [documentation](https://dev.mysql.com/doc/refman/5.7/en/server-options.html#option_mysqld_character-set-server)
+*   `--explicit_defaults_for_timestamp` : see the [documentation](https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp)
+
+The command is:
+
+    mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8 --explicit_defaults_for_timestamp
+
 ## Database updates
 
 If you add or modify a JPA entity, you will need to update your database schema.
@@ -230,11 +188,11 @@ If you use the [entity sub-generator]({{ site.url }}/creating-an-entity/), here 
 
 ### Database updates with the Maven liquibase:diff goal
 
-If you have choosen to use MySQL, MariaDB or PostgreSQL in development, you can use the `./mvnw liquibase:diff` goal to automatically generate a changelog.
+If you have chosen to use MySQL, MariaDB or PostgreSQL in development, you can use the `./mvnw liquibase:diff` goal to automatically generate a changelog.
 
 If you are running H2 with disk-based persistence, this workflow is not yet working perfectly, but you can start trying to use it (and send us feedback!).
 
-[Liquibase Hibernate](https://github.com/liquibase/liquibase-hibernate) is a Maven plugin that is configured in your pom.xml, and is independant from your Spring application.yml file, so if you have changed the default settings (for example, changed the database password), you need to modify both files.
+[Liquibase Hibernate](https://github.com/liquibase/liquibase-hibernate) is a Maven plugin that is configured in your pom.xml, and is independent from your Spring application.yml file, so if you have changed the default settings (for example, changed the database password), you need to modify both files.
 
 Here is the development workflow:
 
@@ -244,7 +202,7 @@ Here is the development workflow:
 *   A new "change log" is created in your `src/main/resources/config/liquibase/changelog` directory
 *   Review this change log and add it to your `src/main/resources/config/liquibase/master.xml` file, so it is applied the next time you run your application
 
-If you use Gradle instead of Maven, you can use the same workflow by running `./gradlew liquibaseDiffChangelog`, and change the database configuration in `liquibase.gradle` if required.
+If you use Gradle instead of Maven, you can use the same workflow by running `./gradlew liquibaseDiffChangelog -PrunList=diffLog`, and change the database configuration in `build.gradle` in the liquibase configuration if required.
 
 ### Database updates by manually editing the change log
 
@@ -260,13 +218,13 @@ If you want more information on using Liquibase, please go to [http://www.liquib
 
 Internationalization (or i18n) is a first-class citizen in JHipster, as we believe it should be set up at the beginning of your project (and not as an afterthought).
 
-Usage is really easy:
+Usage is as follows:
 
-- With AngularJS 1, thanks to [Angular Translate](https://github.com/PascalPrecht/angular-translate), which provides a simple AngularJS directive for i18n
-- With Angular 2+, thanks to [NG2 translate](https://github.com/ocombe/ng2-translate) and a specific JHipster component, which works the same way as Angular Translate, and uses the same files
+- With Angular, thanks to [NG2 translate](https://github.com/ocombe/ng2-translate) and a specific JHipster component, which uses JSON files for translation
+- With React, thanks to a specific JHipster component, which works the same way as the Angular component, and uses the same files
 
-For example, to add a translation to the "first name" field, just add a "translate" attribute with a key: `<label translate="settings.form.firstname">First Name</label>`
+For example, to add a translation to the "first name" field, add a "translate" attribute with a key: `<label jhiTranslate="settings.form.firstname">First Name</label>`
 
-This key references a JSON document, which will return the translated String. Angular will then replace the "First Name" String with the translated version.
+This key references a JSON document, which will return the translated String. Angular/React will then replace the "First Name" String with the translated version.
 
 If you want more information on using languages, read our [Installing new languages documentation]({{ site.url }}/installing-new-languages/).

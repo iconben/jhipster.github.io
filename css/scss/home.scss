@@ -10,13 +10,18 @@ $color-blue: #3E8ACC;
 $dark-blue: #09486b;
 body {
     overflow-x: hidden;
+    font-size: 16px;
 }
 
 p {
-    font-size: 20px;
+    font-size: 1.2em;
     &.small {
         font-size: 16px;
     }
+}
+
+.text-body {
+    font-size: 1.2em;
 }
 
 a {
@@ -42,6 +47,10 @@ h6 {
     font-weight: 700;
 }
 
+h3.heading {
+    font-size: 35px;
+}
+
 hr {
     &.star-light,
     &.star-primary {
@@ -51,6 +60,10 @@ hr {
         border: 0;
         border-top: solid 5px;
         text-align: center;
+        &.smaller {
+            max-width: 150px;
+            border-top: solid 3px;
+        }
     }
     &.star-light:after,
     &.star-primary:after {
@@ -114,6 +127,10 @@ header {
             height: 100%;
             padding: 15px;
             margin: 0 auto;
+            & img {
+                width: 220px;
+                height: 328px;    
+            }
         }
         .brand {
             font-size: 5em;
@@ -179,21 +196,6 @@ header {
     }
 }
 
-.navbar-top.navbar {
-    text-transform: uppercase;
-    font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-    a:focus {
-        outline: 0;
-    }
-    .navbar-nav {
-        letter-spacing: 1px;
-        li a:focus {
-            outline: 0;
-        }
-    }
-}
-
 .navbar-default,
 .navbar-inverse {
     border: 0;
@@ -204,7 +206,7 @@ input.search-text {
 }
 
 section {
-    padding: 100px 0;
+    padding: 0;
     h2 {
         margin: 0;
         font-size: 3em;
@@ -212,7 +214,7 @@ section {
     &.news {
         padding: 10px 0;
     }
-    &.success {
+    &.success, &.blue {
         color: #fff;
         background: $primary-color;
         a {
@@ -427,4 +429,40 @@ form .row:first-child .floating-label-form-group {
 
 .fontSmall {
    font-size: 1em;
+}
+
+.padding-t-25 {
+    padding-top: 25px !important;
+}
+
+.padding-b-25 {
+    padding-bottom: 25px !important;
+}
+
+.padding-t-50 {
+    padding-top: 50px !important;
+}
+
+.padding-b-50 {
+    padding-bottom: 50px !important;
+}
+
+.margin-t-25 {
+    margin-top: 25px !important;
+}
+
+.margin-b-25 {
+    margin-bottom: 25px !important;
+}
+
+.open-collective-info {
+    font-size: 120%;
+    a {
+        color: white;
+        text-decoration: underline
+    }
+}
+
+.project-icon {
+    width: 65px;
 }
